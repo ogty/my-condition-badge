@@ -10,4 +10,5 @@
 - [ ] Display Name
 - [ ] Display of maximum and current values
 - [ ] Gauge color change
-- [ ] MP
+- [ ] MP 
+- [ ] Change frame color
