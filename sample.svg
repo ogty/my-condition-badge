@@ -66,10 +66,28 @@
     <rect x="161.8" y="36.8" width="1.4" height="1.4" fill="black"/>
     <rect x="9" y="21" width="204" height="1" fill="black"/>
     <rect x="9" y="29" width="204" height="1" fill="black"/>
-    <rect x="8" y="25" width="1" height="1" fill="red"/>
-    <rect x="9" y="24" width="1" height="3" fill="red"/>
-    <rect x="10" y="23" width="1" height="5" fill="red"/>
-    <rect x="11" y="23" width="6" height="5" fill="red"/>
+
+    <style>
+    .box {
+        animation: flash 1.5s linear infinite;
+        margin:20px;
+    }
+    @keyframes flash {
+        0%,100% {
+            opacity: 1;
+    }
+    50% {
+            opacity: 0;
+        }
+    }
+    </style>
+    <g class="box">
+        <rect x="8" y="25" width="1" height="1" fill="red"/>
+        <rect x="9" y="24" width="1" height="3" fill="red"/>
+        <rect x="10" y="23" width="1" height="5" fill="red"/>
+        <rect x="11" y="23" width="6" height="5" fill="red"/>
+    </g>
+
     <rect x="8" y="21" width="1" height="2" fill="black"/>
     <rect x="7" y="22" width="1" height="2" fill="black"/>
     <rect x="7" y="27" width="1" height="2" fill="black"/>
