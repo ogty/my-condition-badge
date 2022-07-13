@@ -1,5 +1,10 @@
 # My Condition
 
+
+<div align="center">
+ <img src="./sample.svg" />
+</div>
+
 ## TODO
 
 - [ ] Display Name
