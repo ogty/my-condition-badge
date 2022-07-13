@@ -1,8 +1,8 @@
-<svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 0H5V1H2V0Z" fill="black"/>
-    <path d="M4 1H6V2H4V1Z" fill="black"/>
-    <path d="M1 1H3V2H1V1Z" fill="black"/>
-    <path d="M0 2H2V7H0V2Z" fill="black"/>
-    <path d="M5 2H7V7H5V2Z" fill="black"/>
-    <path d="M2 4H5V5H2V4Z" fill="black"/>
+<svg width="7" height="7" viewBox="0 0 7 7" fill="black" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 0H5V1H2V0Z"/>
+    <path d="M4 1H6V2H4V1Z"/>
+    <path d="M1 1H3V2H1V1Z"/>
+    <path d="M0 2H2V7H0V2Z"/>
+    <path d="M5 2H7V7H5V2Z"/>
+    <path d="M2 4H5V5H2V4Z"/>
 </svg>
