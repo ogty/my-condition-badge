@@ -7,9 +7,9 @@
 
 ## TODO
 
-- [ ] Display Name
-- [ ] Display of maximum and current values
-- [ ] Gauge color change
+- [x] Display Name
+- [x] Display of maximum and current values
+- [x] Gauge color change
 - [ ] MP 
 - [ ] Change frame color
 - [ ] Different frames
