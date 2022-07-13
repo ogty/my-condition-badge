@@ -2,7 +2,7 @@
 
 
 <div align="center">
- <img src="./sample.svg" />
+ <img src="./sample.svg" width="50%" />
 </div>
 
 ## TODO
