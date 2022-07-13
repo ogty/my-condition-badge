@@ -17,6 +17,7 @@ class ConditionBadgeGenerator:
         max_hit_points: int,
         current_hit_points: int,
         state: str = None, # TODO: I'll do the math right.
+        flash: bool = False,
     ) -> None:
         self.number_correspondence_table = {
             "0": "zero",
@@ -34,6 +35,7 @@ class ConditionBadgeGenerator:
         self.color = color
         self.max_hit_points = max_hit_points
         self.current_hit_points = current_hit_points
+        self.flash = flash
 
         # TODO: I'll do the math right.
         self.state = state if state else "full"
@@ -87,14 +89,20 @@ class ConditionBadgeGenerator:
             tmp = self.reader("guage-left").positioner(0, 0)
             svg_guage += tmp.replace("<rect", '<rect fill="yellow" ')
         elif self.state == "dead":
-            svg_guage += f'<rect x="11" y="23" width="{6}" height="5" fill="red"/>'
             tmp = self.reader("guage-left").positioner(0, 0)
-            svg_guage += tmp.replace("<rect", '<rect fill="red" ')
+            if self.flash:
+                svg_guage += f'<rect class="box" x="11" y="23" width="{6}" height="5" fill="red"/>'
+                svg_guage += tmp.replace("<rect", '<rect class="box" fill="red" ')
+                svg_guage += "<style>.box{animation:flash 1.5s linear infinite;}@keyframes flash{0%,100% {opacity:1;}50%{opacity:0;}}</style>"
+            else:
+                svg_guage += f'<rect x="11" y="23" width="{6}" height="5" fill="red"/>'
+                svg_guage += tmp.replace("<rect", '<rect fill="red" ')
 
         return svg_guage
 
     def name_to_svg(self) -> str:
         name_array = [i for i in self.name]
+        name_array.insert(0, "colon")
         name_array_length = len(name_array)
         svg_name = ""
         x = abs(name_array_length * 8 - 215)
@@ -108,7 +116,6 @@ class ConditionBadgeGenerator:
     def hit_points_to_svg(self) -> str:
         hit_points = str(self.current_hit_points) + str(self.max_hit_points)
         current_hit_points_length = len(str(self.current_hit_points))
-
         hit_points_array = [i for i in hit_points]
         hit_points_array.insert(current_hit_points_length, "slash")
         hit_points_length = len(hit_points_array)
@@ -139,12 +146,13 @@ class ConditionBadgeGenerator:
 async def main(
     name: str,
     color: str = "black",
-    max_hit_points: int = 10000,
-    current_hit_points: int = 10000,
+    max: int = 10000,
+    current: int = 10000,
     state: str = "full",
+    flash: bool = False,
 ) -> Response:
     color = f"#{color}" if all(c in hexdigits for c in color) else color
-    svg = ConditionBadgeGenerator(name, color, max_hit_points, current_hit_points, state)
+    svg = ConditionBadgeGenerator(name, color, max, current, state, flash)
     content = svg.hp()
 
     response_headers = {
