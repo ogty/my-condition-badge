@@ -1,0 +1,5 @@
+<svg fill="green" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="3" width="1" height="1" transform="rotate(-180 3 3)"/>
+    <rect x="2" y="4" width="1" height="3" transform="rotate(-180 2 4)"/>
+    <rect x="1" y="5" width="1" height="5" transform="rotate(-180 1 5)"/>
+</svg>

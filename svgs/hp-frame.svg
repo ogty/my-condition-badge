@@ -72,4 +72,8 @@
     <rect x="215" y="24" width="1" height="2" transform="rotate(-180 215 24)"/>
     <rect x="214" y="23" width="1" height="2" transform="rotate(-180 214 23)"/>
     <rect x="216" y="28" width="1" height="5" transform="rotate(-180 216 28)"/>
+
+    <!-- name -->
+    <!-- guage -->
+    <!-- hit points -->
 </svg>
