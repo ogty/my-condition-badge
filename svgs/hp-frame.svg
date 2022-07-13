@@ -1,0 +1,75 @@
+<svg width="229" height="51" viewBox="0 0 229 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- HP -->
+    <rect x="21.5714" y="8" width="5.14286" height="1.28571" fill="black"/>
+    <rect x="21.5714" y="13.1429" width="5.14286" height="1.28571" fill="black"/>
+    <rect x="19" y="8" width="2.57143" height="9" fill="black"/>
+    <rect x="25.4286" y="9.28571" width="2.57143" height="3.85714" fill="black"/>
+    <rect x="9" y="8" width="2.57143" height="9" fill="black"/>
+    <rect x="15.4286" y="8" width="2.57143" height="9" fill="black"/>
+    <rect x="11.5714" y="11.8571" width="3.85714" height="1.28571" fill="black"/>
+    <rect x="8" width="1" height="2" fill="black"/>
+
+    <!-- frame border left -->
+    <rect x="7" y="1" width="1" height="2" fill="black"/>
+    <rect x="6" y="2" width="1" height="2" fill="black"/>
+    <rect x="2" y="6" width="1" height="2" fill="black"/>
+    <rect x="1" y="7" width="1" height="2" fill="black"/>
+    <rect x="4" y="44" width="1" height="2" fill="black"/>
+    <rect x="1" y="41" width="1" height="2" fill="black"/>
+    <rect x="8" y="48" width="1" height="2" fill="black"/>
+    <rect x="9" y="49" width="1" height="2" fill="black"/>
+    <rect x="2" y="42" width="1" height="2" fill="black"/>
+    <rect x="3" y="43" width="1" height="2" fill="black"/>
+    <rect x="7" y="47" width="1" height="2" fill="black"/>
+    <rect x="5" y="45" width="1" height="2" fill="black"/>
+    <rect x="6" y="46" width="1" height="2" fill="black"/>
+    <rect x="3" y="5" width="1" height="2" fill="black"/>
+    <rect x="4" y="4" width="1" height="2" fill="black"/>
+    <rect x="5" y="3" width="1" height="2" fill="black"/>
+    <rect y="8" width="1" height="34" fill="black"/>
+
+    <!-- frame border right -->
+    <rect x="221" y="51" width="1" height="2" transform="rotate(-180 221 51)" fill="black"/>
+    <rect x="222" y="50" width="1" height="2" transform="rotate(-180 222 50)" fill="black"/>
+    <rect x="223" y="49" width="1" height="2" transform="rotate(-180 223 49)" fill="black"/>
+    <rect x="227" y="45" width="1" height="2" transform="rotate(-180 227 45)" fill="black"/>
+    <rect x="228" y="44" width="1" height="2" transform="rotate(-180 228 44)" fill="black"/>
+    <rect x="225" y="7" width="1" height="2" transform="rotate(-180 225 7)" fill="black"/>
+    <rect x="228" y="10" width="1" height="2" transform="rotate(-180 228 10)" fill="black"/>
+    <rect x="221" y="3" width="1" height="2" transform="rotate(-180 221 3)" fill="black"/>
+    <rect x="220" y="2" width="1" height="2" transform="rotate(-180 220 2)" fill="black"/>
+    <rect x="227" y="9" width="1" height="2" transform="rotate(-180 227 9)" fill="black"/>
+    <rect x="226" y="8" width="1" height="2" transform="rotate(-180 226 8)" fill="black"/>
+    <rect x="222" y="4" width="1" height="2" transform="rotate(-180 222 4)" fill="black"/>
+    <rect x="224" y="6" width="1" height="2" transform="rotate(-180 224 6)" fill="black"/>
+    <rect x="223" y="5" width="1" height="2" transform="rotate(-180 223 5)" fill="black"/>
+    <rect x="226" y="46" width="1" height="2" transform="rotate(-180 226 46)" fill="black"/>
+    <rect x="225" y="47" width="1" height="2" transform="rotate(-180 225 47)" fill="black"/>
+    <rect x="224" y="48" width="1" height="2" transform="rotate(-180 224 48)" fill="black"/>
+    <rect x="229" y="43" width="1" height="34" transform="rotate(-180 229 43)" fill="black"/>
+
+    <!-- frame border top -->
+    <rect x="9" width="210" height="1" fill="black"/>
+    <!-- frame border bottom -->
+    <rect x="10" y="50" width="210" height="1" fill="black"/>
+
+    <!-- guage border top -->
+    <rect x="9" y="21" width="204" height="1" fill="black"/>
+
+    <!-- guage border bottom -->
+    <rect x="9" y="29" width="204" height="1" fill="black"/>
+
+    <!-- guage border left -->
+    <rect x="8" y="21" width="1" height="2" fill="black"/>
+    <rect x="7" y="22" width="1" height="2" fill="black"/>
+    <rect x="7" y="27" width="1" height="2" fill="black"/>
+    <rect x="8" y="28" width="1" height="2" fill="black"/>
+    <rect x="6" y="23" width="1" height="5" fill="black"/>
+
+    <!-- guage border right -->
+    <rect x="214" y="30" width="1" height="2" transform="rotate(-180 214 30)" fill="black"/>
+    <rect x="215" y="29" width="1" height="2" transform="rotate(-180 215 29)" fill="black"/>
+    <rect x="215" y="24" width="1" height="2" transform="rotate(-180 215 24)" fill="black"/>
+    <rect x="214" y="23" width="1" height="2" transform="rotate(-180 214 23)" fill="black"/>
+    <rect x="216" y="28" width="1" height="5" transform="rotate(-180 216 28)" fill="black"/>
+</svg>
