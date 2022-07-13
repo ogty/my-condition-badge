@@ -12,3 +12,5 @@
 - [ ] Gauge color change
 - [ ] MP 
 - [ ] Change frame color
+- [ ] Different frames
+- [ ] Different fonts
