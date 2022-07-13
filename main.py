@@ -16,7 +16,6 @@ class ConditionBadgeGenerator:
         color: str,
         max_hit_points: int,
         current_hit_points: int,
-        state: str = None, # TODO: I'll do the math right.
         flash: bool = False,
     ) -> None:
         self.number_correspondence_table = {
@@ -36,9 +35,6 @@ class ConditionBadgeGenerator:
         self.max_hit_points = max_hit_points
         self.current_hit_points = current_hit_points
         self.flash = flash
-
-        # TODO: I'll do the math right.
-        self.state = state if state else "full"
 
         with open("./svgs/hp-frame.svg", "r", encoding="utf-8") as f:
             hp_frame = f.read()
@@ -70,38 +66,33 @@ class ConditionBadgeGenerator:
         return svg_string
 
     def guage_to_svg(self) -> str:
-        # TODO: I'll do the math right.
-        svg_guage = ""
         y = 23
+        svg_guage = ""
+        guage_rate = self.current_hit_points / self.max_hit_points
+        guage_length = 200 * guage_rate
 
-        if self.state == "full":
-            tmp = self.reader("guage-right").positioner(211, y)
-            svg_guage += tmp.replace("<rect", '<rect fill="green" ')
-            svg_guage += f'<rect x="11" y="23" width="{200}" height="5" fill="green"/>'
-            tmp = self.reader("guage-left").positioner(0, 0)
-            svg_guage += tmp.replace("<rect", '<rect fill="green" ')
-        elif self.state == "half":
-            svg_guage += f'<rect x="11" y="23" width="{80}" height="5" fill="yellow"/>'
-            tmp = self.reader("guage-left").positioner(0, 0)
-            svg_guage += tmp.replace("<rect", '<rect fill="yellow" ')
-        elif self.state == "quarter":
-            svg_guage += f'<rect x="11" y="23" width="{50}" height="5" fill="yellow"/>'
-            tmp = self.reader("guage-left").positioner(0, 0)
-            svg_guage += tmp.replace("<rect", '<rect fill="yellow" ')
-        elif self.state == "dead":
-            tmp = self.reader("guage-left").positioner(0, 0)
+        if 110 <= guage_length <= 220:
+            svg_guage += f'<rect x="11" y="23" width="{guage_length}" height="5" fill="green"/>'
+            svg_guage += self.reader("guage-left").positioner(0, 0).replace("<rect", '<rect fill="green" ')
+
+            if guage_length == 200:
+                svg_guage += self.reader("guage-right").positioner(211, y).replace("<rect", '<rect fill="green" ')
+        elif 21 <= guage_length <= 110:
+            svg_guage += f'<rect x="11" y="23" width="{guage_length}" height="5" fill="yellow"/>'
+            svg_guage += self.reader("guage-left").positioner(0, 0).replace("<rect", '<rect fill="yellow" ')
+        else:
             if self.flash:
-                svg_guage += f'<rect class="box" x="11" y="23" width="{6}" height="5" fill="red"/>'
-                svg_guage += tmp.replace("<rect", '<rect class="box" fill="red" ')
+                svg_guage += f'<rect class="box" x="11" y="23" width="{guage_length}" height="5" fill="red"/>'
+                svg_guage += self.reader("guage-left").positioner(0, 0).replace("<rect", '<rect class="box" fill="red" ')
                 svg_guage += "<style>.box{animation:flash 1.5s linear infinite;}@keyframes flash{0%,100% {opacity:1;}50%{opacity:0;}}</style>"
             else:
                 svg_guage += f'<rect x="11" y="23" width="{6}" height="5" fill="red"/>'
-                svg_guage += tmp.replace("<rect", '<rect fill="red" ')
+                svg_guage += self.reader("guage-left").positioner(0, 0).replace("<rect", '<rect fill="red" ')
 
         return svg_guage
 
     def name_to_svg(self) -> str:
-        name_array = [i for i in self.name]
+        name_array = [i for i in self.name.upper()]
         name_array.insert(0, "colon")
         name_array_length = len(name_array)
         svg_name = ""
@@ -148,11 +139,11 @@ async def main(
     color: str = "black",
     max: int = 10000,
     current: int = 10000,
-    state: str = "full",
     flash: bool = False,
 ) -> Response:
     color = f"#{color}" if all(c in hexdigits for c in color) else color
-    svg = ConditionBadgeGenerator(name, color, max, current, state, flash)
+    current = current if current <= max else max
+    svg = ConditionBadgeGenerator(name, color, max, current, flash)
     content = svg.hp()
 
     response_headers = {
